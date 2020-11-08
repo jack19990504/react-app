@@ -4,14 +4,55 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 class Location extends React.Component{
-  render(){
+
+  // belongs to javascript
+  // initialize state
+  // state can only changed with setState()
+  
+  constructor(props){
+    // must do
+    // overriding React Component constructor
+    super(props)
+
+    // initialize state
+    // ONLY ACCETABLE FOR initialize 
+    this.state = { 
+      Latitude : null,
+      errorMessage : ''
+    };
+    
     window.navigator.geolocation.getCurrentPosition(
-      (position) => console.log(position),
-      (error) => console.log(error)
+      position => {
+        console.log(position.coords.latitude);
+        console.log(123);
+        // use setState to assign value
+        // ** NEVER use (this.state.Latitude = position.coords.latitude) **
+
+        this.setState({Latitude : position.coords.latitude})
+      },
+      error => {
+        this.setState({ errorMessage : error.message })
+      }
     ); 
-    return(
-      <div>Latitude : </div>
-    );
+  }
+
+  
+  // class component must define render!
+  // must return some JSX!
+  render(){
+    if(this.state.errorMessage && !this.state.Latitude){
+      return<div>
+        Error : { this.state.errorMessage }
+      </div>
+    }
+
+    if(!this.state.errorMessage && this.state.Latitude){
+      return<div>
+        Latitude : { this.state.Latitude }<br/>
+      </div>
+    }
+    
+    return <div>loading</div>
   };
 }
 
