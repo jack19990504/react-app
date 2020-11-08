@@ -4,7 +4,15 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 const App2 = () =>{
-  return <div>Hello world</div>
+  return(
+    <div>
+      <label class = "lable" for = "name">
+        Enter Name:
+      </label>
+      <input id = "name" type = "text"/>
+      <button style = {{backgroundColor : 'green',color : 'white'}}>Submit</button>
+    </div>
+  );
 };
 
 ReactDOM.render(
@@ -12,7 +20,7 @@ ReactDOM.render(
     <App2 />
   </React.StrictMode>,
   document.getElementById('root')
-);
+); 
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
