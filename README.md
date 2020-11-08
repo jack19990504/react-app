@@ -1,6 +1,9 @@
 # Getting Started with Create React App
-[![Build Status](https://travis-ci.com/jack19990504/react-app.svg?branch=main)](https://travis-ci.com/jack19990504/react-app)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Project Status
+[![Build Status](https://travis-ci.com/jack19990504/react-app.svg?branch=main)](https://travis-ci.com/jack19990504/react-app)
+Open [this](https://jack-react-demo.herokuapp.com/) to view latest version of my work in the browser.
 
 ## Available Scripts
 
