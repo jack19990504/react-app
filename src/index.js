@@ -2,37 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import CommentDeatil from './CommentDeail';
-import ApprovalCard from './ApprovalCard'; 
-import faker from 'faker';
 
-
-const App2 = () =>{
-
-  return(
-    <div className = "ui container comments">
-      <ApprovalCard>
-        <div>
-          <h4>Warning!</h4>
-          Are you sure you want to do it?
-        </div>
-      </ApprovalCard>
-      <ApprovalCard>
-        <CommentDeatil author = 'Jack' timeAgo ='Today at 6:00PM' content='Nice work!' avatar ={faker.image.avatar()}/>
-      </ApprovalCard>
-      <ApprovalCard>
-        <CommentDeatil author = 'Betty' timeAgo ='Today at 4:45PM' content='great Job!' avatar ={faker.image.avatar()}/>  
-      </ApprovalCard>
-      <ApprovalCard>
-        <CommentDeatil author = 'Morris' timeAgo ='Today at 3:00PM' content='STFU!' avatar ={faker.image.avatar()}/>
-      </ApprovalCard>
-    </div>
-  );
-};
+class Location extends React.Component{
+  render(){
+    window.navigator.geolocation.getCurrentPosition(
+      (position) => console.log(position),
+      (error) => console.log(error)
+    ); 
+    return(
+      <div>Latitude : </div>
+    );
+  };
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App2 /> 
+    <Location /> 
   </React.StrictMode>,
   document.getElementById('root')
 ); 
